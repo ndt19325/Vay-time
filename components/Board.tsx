@@ -32,8 +32,12 @@ export const Board: React.FC<BoardProps> = ({ board, onCellClick, nextPlayer }) 
   }, [boardSizePx]);
 
   return (
-    <div className="relative inline-block go-board-wood rounded-lg shadow-2xl p-4 border-4 border-[#5c3c24]">
-      <svg width={boardSizePx} height={boardSizePx} viewBox={`0 0 ${boardSizePx} ${boardSizePx}`}>
+    <div className="w-full h-full go-board-wood rounded-md md:rounded-lg shadow-2xl p-1 md:p-2 border-[3px] md:border-4 border-[#5c3c24] flex items-center justify-center">
+      <svg 
+        viewBox={`0 0 ${boardSizePx} ${boardSizePx}`} 
+        className="w-full h-full drop-shadow-lg"
+        preserveAspectRatio="xMidYMid meet"
+      >
         {gridLines}
         {starPoints.map(([r, c]) => (
           <circle key={`star-${r}-${c}`} cx={padding + c * cellSize} cy={padding + r * cellSize} r={3} fill="#3d2b1f" />
