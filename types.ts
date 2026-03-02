@@ -1,6 +1,7 @@
 export const GameMode = {
   SINGLE: 'SINGLE',
-  DOUBLE: 'DOUBLE'
+  DOUBLE: 'DOUBLE',
+  ONLINE: 'ONLINE'
 } as const;
 
 export type GameMode = (typeof GameMode)[keyof typeof GameMode];
